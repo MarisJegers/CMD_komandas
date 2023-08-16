@@ -1,0 +1,30 @@
+:: Dažādas komandrindas komandas Windows sistēmu administrēšanai.
+:: Displays detailed configuration information about a computer and its operating system, 
+:: including operating system configuration, security information, product ID, 
+:: and hardware properties (such as RAM, disk space, and network cards).
+:: Source: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/systeminfo
+systeminfo
+:: Get serial number of computer
+wmic bios get serialnumber
+::To get all installed apps - 
+wmic product get name
+::To get bios version - 
+wmic bios get version
+wmic os get version
+::To check all options of wmic
+REM wmic /?
+:: To get approx.location of computer - 
+curl ipinfo.io
+REM whoami
+REM ipconfig /all
+REM ping www.strabag.com
+REM arp -a
+REM netstat | find "ESTABLISHED"
+REM route print
+:: tracert paraada visus ping pieprasiijumaa iesaistiitos ruuterus
+REM tracert www.nic.lv
+:: pathping it first finds the routers between the source and the destination, 
+:: and then finds latency and packet loss between the source and all the routers along the way
+:: by sending echo requests
+pathping www.nic.lv
+cmd /k
